@@ -168,7 +168,9 @@ You can see this to be the case by going to your `index.html` page, running in y
 
 ### Run some jQuery methods
 
-In the DevTools console of your browser running the `index.hml` page of the Wonkiepedia project, run the following commands:
+Making DOM queries with jQuery, we can select elements using their type, their class or their id. There's also a buttload of options for further targeting elements, like, get the last child of a div, or select only the first `<a>` tag below a `<div>` with class of `blue`.
+
+Let's start with some simple exercises right on our index page.  In the DevTools console of your browser running the `index.hml` page of the Wonkiepedia project, run the following commands:
 
 1. Select all divs and change their text color to red:
     
@@ -228,6 +230,12 @@ In the DevTools console of your browser running the `index.hml` page of the Wonk
         ```
     
 ## Exercises
+
+Creating DOM elements with jQuery, we provide a string representing the type of element we want to create. The string must include the element symbols:
+
+```javascript
+let $div = $('<div>').addClass('blue-div');
+```
 
 Open up the `index.js` file of the wonkiepedia project, and follow the 
 instructions to build out the UI from the loaded JSON data.
