@@ -227,7 +227,34 @@ In the DevTools console of your browser running the `index.hml` page of the Wonk
         $('#section-bio p:last-child').remove();
         ```
     
+## Exercises
 
+Open up the `index.js` file of the wonkiepedia project, and follow the 
+instructions to build out the UI from the loaded JSON data.
+
+For exercise 3, you want to build a table using jQuery to list Billy's rider. Below is an example of a function that uses jQuery to build a HTML table, based on some people data. Your job is do to something similar with Billy's rider data.
+
+```javascript
+var createTable = function(people){
+    var createRow = function(person){
+        var $row = $("<tr>");
+        var $nameFirst = $("<td>").text(person.nameFirst);
+        var $nameLast = $("<td>").text(person.nameLast);
+        $row.append($nameFirst);
+        $row.append($nameLast);
+        return $row;
+    }
+    var $table = $("<table>");
+    var $rows = people.map(createRow);
+    $table.append($rows);
+    return $table;
+};
+let people = [{nameFirst: "John", nameLast: "Doe"}, {nameFirst: "Dick", nameLast: "Jones"}]
+createTable(people).appendTo("body");
+```
+
+
+## Halle 
                                   _,-,_
                                ,-'  |. '-,
                               /    .|     \

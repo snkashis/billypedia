@@ -52,8 +52,9 @@ $(document).ready(function() {
          *       </section>
          */
          
+         
          /*
-          * Below the <section id="section-disc">, create a new section for 
+          * 3. Below the <section id="section-disc">, create a new section for 
           * Billy's rider. Use jQuery to assemble a table to display the rider 
           * data. The rider data is at data.rider
           */
