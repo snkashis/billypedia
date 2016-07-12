@@ -237,6 +237,10 @@ Creating DOM elements with jQuery, we provide a string representing the type of 
 let $div = $('<div>').addClass('blue-div');
 ```
 
+Above, when we create this element, we've yet to add it to the DOM.  This is advantageous because the DOM we can build complex nested elements, and add them once constructed, and this means the webpage is only redrawn once.
+
+Let's get to work creating some elements.
+
 Open up the `index.js` file of the wonkiepedia project, and follow the 
 instructions to build out the UI from the loaded JSON data.
 

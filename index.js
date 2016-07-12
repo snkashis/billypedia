@@ -6,7 +6,7 @@ $(document).ready(function() {
         // console.log(data);
         
         /*
-         * Style the #section-bio and #section-quotes as per some of the 
+         * 0. Style the #section-bio and #section-quotes as per some of the 
          * examples we tried in the console.
          */
         
