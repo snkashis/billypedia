@@ -213,21 +213,21 @@ Let's start with some simple exercises right on our index page.  In the DevTools
 
 1. Move the section quotes to the top of the div with id sections:
     
-        ```javascript
-        $('#section-quotes').prependTo('#sections');
-        ```
+    ```javascript
+    $('#section-quotes').prependTo('#sections');
+    ```
     
 2. Change an HTML attribute by swaping out the `src` of the image tag:
     
-        ```javascript
-        $('#pic-billy').attr('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Billy_Higgins.jpg/220px-Billy_Higgins.jpg');
-        ```
+    ```javascript
+    $('#pic-billy').attr('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Billy_Higgins.jpg/220px-Billy_Higgins.jpg');
+    ```
     
 3. Remove the stuff about Billy's divorce!
     
-        ```javascript
-        $('#section-bio p:last-child').remove();
-        ```
+    ```javascript
+    $('#section-bio p:last-child').remove();
+    ```
     
 ## Exercises
 

@@ -1,6 +1,6 @@
 /* global $ _ */
 $(document).ready(function() {
-    $.getJSON('discography.json', function (data) {
+    $.getJSON('data.json', function (data) {
         // YOUR CODE BELOW HERE //
         
         // console.log(data);
