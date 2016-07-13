@@ -33,19 +33,21 @@ nav header {
 }
 
 nav ul {
+    -moz-padding-start: 0;
+    -webkit-padding-start: 0;
     list-style-image: none;
 }
 
 nav li {
     display: inline-block;
     padding: 0 10px;
+    font-size: 1.2em;
 }
 
 nav a {
     text-decoration: none;
     color: #fff;
 }
-
 
 /* main container area beneath menu */
 
@@ -55,7 +57,7 @@ main {
 }
 
 [class=sidebar] {
-    margin-right: 25px;
+    margin-right: 10px;
     padding: 10px;
 }
 
@@ -65,9 +67,17 @@ main {
 
 [class=content] {
     flex: 1;
-    padding: 15px;
+    padding: 4px;
+    padding-top: 0;
+    margin-right: 10px;
 }
 
 [class=discography] header {
     font-size: 1.25em;
+}
+
+#pic-billy {
+    border: 2px solid;
+    border-color: rgba(255, 255, 255, 1);
+    cursor: pointer; cursor: hand;
 }
