@@ -174,40 +174,40 @@ Let's start with some simple exercises right on our index page.  In the DevTools
 
 1. Select all divs and change their text color to red:
     
-        ```javascript
-        $('div').css('color', 'red');
-        ```
+    ```javascript
+    $('div').css('color', 'red');
+    ```
     
 2. Change all the div text color back to black:
     
-        ```javascript
-        $('div').css('color', 'black');
-        ```
+    ```javascript
+    $('div').css('color', 'black');
+    ```
     
 3. Change the background of the section quotes to grey with rounded corners.
     
-        ```javascript
-        $('#section-quotes').css('background-color', 'grey').css('border-radius', '4px');
-        ```
+    ```javascript
+    $('#section-quotes').css('background-color', 'grey').css('border-radius', '4px');
+    ```
     
 4. Change the color of the quotes heading to white and give it some padding:
     
-        ```javascript
-        $('.heading-quotes').css('color', 'white').css('padding-left', '10px');
-        ```
+    ```javascript
+    $('.heading-quotes').css('color', 'white').css('padding-left', '10px');
+    ```
     
 5. Change all the `.quote` class paragraphs to be text color white and font-style of italic:
     
-        ```javascript
-        $('.quote').css('color', 'white').css('font-style', 'italic');
-        ```
+    ```javascript
+    $('.quote').css('color', 'white').css('font-style', 'italic');
+    ```
     
 6. Give the div with id quotes some padding:
     
-        ```javascript
-        $('#quotes').css('padding-right', '10px').css('padding-left', '10px');
-        $('#quotes:last-child').css('padding-bottom', '4px');
-        ```
+    ```javascript
+    $('#quotes').css('padding-right', '10px').css('padding-left', '10px');
+    $('#quotes:last-child').css('padding-bottom', '4px');
+    ```
     
 ### Moving, Replacing, and Removing Elements:
 
@@ -265,6 +265,19 @@ let people = [{nameFirst: "John", nameLast: "Doe"}, {nameFirst: "Dick", nameLast
 createTable(people).appendTo("body");
 ```
 
+### Creating a Button with jQuery
+
+```javascript
+$('<button>', {
+        text: 'Next Picture',
+        id: 'btnNextPic',
+        click: function () {
+            console.log('next pic button clicked!')
+        }
+    }).appendTo('main');
+```
+
+The above code creates a button, adds text to the button `Next Picture`, gives the button and id of `btnNextPic`, assigns a click handler, and finally, appends it to the `<main>` DOM element.
 
 ## Halle 
                                   _,-,_
