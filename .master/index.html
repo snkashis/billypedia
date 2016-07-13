@@ -6,7 +6,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash-compat/3.10.2/lodash.min.js"></script>
         <!-- TODO 1 : Import jQuery from a CDN using a script tag -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script type="text/javascript" src="index.js"></script>
+        <script src="lib/spin.min.js"></script>
+        <script src="lib/pacifier.js"></script>
+        <script src="index.js"></script>
     </head>
 
     <body>
@@ -19,8 +21,8 @@
 
             <main>
                 <div id="sidebar" class="sidebar">
-                    <div id="pic-container">
-                        <img id="pic-billy" src="images/billy/billy-0.jpg" i="0" width="25%"></img>
+                    <div id="image-container-billy" class="image-container">
+                        <img id="image-billy" src="images/billy/billy-0.jpg" i="0" width="25%" class="image"></img>
                     </div>
                     <section id="section-top-rated" class="recordings">
                         <header id="header-top-rated" class="header-recordings">Top Rated</header>

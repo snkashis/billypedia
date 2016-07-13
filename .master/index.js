@@ -1,16 +1,24 @@
-/* global $ _ */
+/* global $ _ opspark */
 $(document).ready(function() {
     $.getJSON('data.json', function (data) {
         // YOUR CODE BELOW HERE //
         
         const
             billyPics = data.images.billy,
-            $billyPic = $('#pic-billy');
+            $billyPic = $('#image-billy');
         
         $billyPic
             .on('click', function(event) {
                 let i = $billyPic.attr('i');
-                $billyPic.attr('src', billyPics[++i] || billyPics[i = 0]).attr('i', i);
+                const pacifier = opspark.makePacifier($('#image-container-billy')[0]);
+                $billyPic
+                    .attr('src', billyPics[++i] || billyPics[i = 0])
+                    .attr('i', i)
+                    .hide()
+                    .on('load', function (event) {
+                        pacifier.stop();
+                        $(event.currentTarget).fadeIn(200);
+                    });
             });
         
         // console.log(data);
@@ -31,7 +39,7 @@ $(document).ready(function() {
          */
         const topRated = data.discography.topRated;
         
-        const $imageContainerTopRated = $('<div>').attr('id', 'top-rated-image-container').addClass('recording-image-container');
+        const $imageContainerTopRated = $('<div>').attr('id', 'image-container-top-rated').addClass('image-container');
         $imageContainerTopRated.append(createImage(_.find(topRated, {'title': 'Voice in the Night'}).art));
         $('#header-top-rated').after($imageContainerTopRated);
         
@@ -41,7 +49,7 @@ $(document).ready(function() {
                 .append($('<div>').addClass('top-rated-title').text(recording.title));
         });
         $('#list-top-rated').append(topRatedListItems);
-        $('.top-rated').on('click', {id: 'top-rated-image-container'}, replaceImage);
+        $('.top-rated').on('click', {id: 'image-container-top-rated'}, replaceImage);
         
         
         /*
@@ -84,9 +92,8 @@ $(document).ready(function() {
         const $sectionRecordings = $('<section>').attr('id', 'section-recordings').addClass('recordings');
         const $headerRecordings = $('<header>').addClass('header-recordings').text('Recordings');
         const $listRecordings = $('<ul>').addClass('list-recordings').append(recordingsListItems);
-        const $imageContainerRecording = $('<div>').attr('id', 'recording-image-container').addClass('recording-image-container');
+        const $imageContainerRecording = $('<div>').attr('id', 'image-container-recording').addClass('image-container');
         $imageContainerRecording.append(createImage(_.first(recordings).art));
-        
         
         $sectionRecordings
             .append($headerRecordings)
@@ -94,7 +101,7 @@ $(document).ready(function() {
             .append($listRecordings)
             .appendTo('#sidebar');
          
-         $('.recording').on('click', {id: 'recording-image-container'}, replaceImage);
+         $('.recording').on('click', {id: 'image-container-recording'}, replaceImage);
          
          /*
           * 3. Below the <section id="section-disc">, create a new section for 
@@ -114,18 +121,19 @@ $(document).ready(function() {
 function replaceImage(event) {
     const 
         $imageContainer = $(`#${event.data.id}`).empty(),
+        pacifier = opspark.makePacifier($imageContainer[0]),
         artPath = $(event.currentTarget).attr('art');
-    $imageContainer.append(createImage(artPath));
+    $imageContainer.append(createImage(artPath, pacifier));
 }
 
-function createImage(path) {
+function createImage(path, pacifier) {
     const $image = $('<img>')
         .hide()
         .attr('id', 'recording-image')
         .attr('src', path)
-        .addClass('recording-image')
+        .addClass('image')
         .on('load', function(event) {
-            // pacifier.stop();
+            if(pacifier) pacifier.stop();
             $image.fadeIn(200);
         });
     return $image;

@@ -76,7 +76,7 @@ main {
     font-size: 1.25em;
 }
 
-#pic-billy {
+#image-billy {
     border: 2px solid;
     border-color: rgba(255, 255, 255, 1);
     cursor: pointer; cursor: hand;
@@ -105,6 +105,8 @@ main {
 }
 
 .header-recordings {
+    background: rgb(239, 80, 41);
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 10px 0 10px 0;
 }
@@ -126,14 +128,14 @@ main {
     color: rgba(0, 0, 0, .5);
 }
 
-.recording-image-container {
+.image-container {
     min-width: 200;
     min-height: 200px;
     max-width: 200px;
     max-height: 200px;
 }
 
-.recording-image {
+.image {
     max-width: 200px;
     max-height: 200px;
     min-width: 200px;
