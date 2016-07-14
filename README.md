@@ -161,7 +161,7 @@ We've included an example of looping over the list and logging the `recording` s
 ```javascript
 let topRated = data.discography.topRated;
 _.forEach(topRated, function(recording) {
-    // console.log(recording);
+    console.log(recording);
 });
 ```
 
