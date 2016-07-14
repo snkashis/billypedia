@@ -214,7 +214,7 @@ Build out a feature for the image of Billy such that when the user clicks on his
 
 How do you add a click handler to an HTML element? How to you change an attribute of an HTML element?
 
-In order to make the HTML layout stay in place when swapping out images, you may need to set `min-width` and `min-height` of image containing div. How can you do this with a CSS class and style rule?
+In order to make the HTML layout stay in place when swapping out images, you may need to set `min-width` and `min-height` of the image-containing div. How can you do this with a CSS class and style rule?
 
 Can you make the image fade-in?
 
