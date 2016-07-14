@@ -238,7 +238,9 @@ To do this, you need a way of writing some data to each `<li>` such that when a 
 
 #### TODO 9 Build a Table using jQuery
 
-Tables are designed for tabular data, and not layout!. For **TODO 8**, you want to build a table using jQuery to list Billy's rider. Below is an example of a function that uses jQuery to build a HTML table, based on some people data. Your job is do to something similar with Billy's rider data.
+Tables are designed for tabular data, and not layout!. For **TODO 8**, you want to build a table using jQuery to list Billy's rider. A rider is all the things a musicians needs to perform, sometimes including smarties with the blue ones removed!
+
+Below is an example of a function that uses jQuery to build a HTML table, based on some people data. Your job is do to something similar with Billy's rider data.
 
 ```javascript
 var createTable = function(people){
