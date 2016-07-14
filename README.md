@@ -1,75 +1,38 @@
-# Wonkiepedia
+# Billypedia
 
 An intro to jQuery!
 
-## Setup
+Special thanks to Nathan Dooilli @ndonolli for the fatastic name for this project!
 
-Run `os install` and select and install the `wonkiepedia` project. Once installed, close any other files you have open in Cloud9, then, from within the `projects/wonkiepedia` directory, open both the index.html and index.js pages.  We'll code in these two pages.
+## Module: jQuery
 
-Make sure your website is serving from Cloud9, open it, and navigate to your portfolio, select `wonkiepedia` - this will open the `index.html` page in your browser. You'll see a Wonkiepedia entry for the great Billy Higgins.
+This project corresponds with the jQuery module of the Operation Spark Bootcamp. See the jQuery module under the Bootcamp in https://greenlight.operationspark.org, and ensure you've read all sub modules therein.
 
-## jQuery
+### Setup
+
+Run `os install` and select and install the `billypedia` project. Once installed, close any other files you have open in your editor, then, from within the `projects/billypedia` directory, open both the `index.html` and `index.js` pages.  We'll code in these two pages.
+
+Make sure your website is serving from Cloud9, open it, and navigate to your portfolio, select `Billypedia` - this will open the `index.html` page in your browser. You'll see a Wikipedia-like Billypedia page for the great jazz drummer, Billy Higgins.
+
+### jQuery
 
 jQuery is a third-party library that allows developers to more easily manipulate the elements of a webpage represented in the <a href="https://en.wikipedia.org/wiki/Document_Object_Model" target="_blank">DOM (Document Object Model).</a>
 
-This includes helping:
+We're going to use it to modify our Billypedia page, as well to give our page dynamic features.
 
-* selecting elements
-* adding/removing CSS classes and HTML attributes to/from elements
-* creating elements
-* hiding/showing/deleting/moving elements
-* adding events to elements
-* ...and much, much, more
+## TODO
 
-While a developer can use the browser's built-in API for DOM manipulation, this API is verbose. jQuery cuts down on the amount of code needed to do amazing modifications to a webpage at runtime.
-
-### How is jQuery Easier?
-Consider the following example JavaScript code that gets an element by its `id` and then removes it from the DOM:
-
-```javascript
-var el = document.getElementById('element-id');
-el.parentNode.removeChild(el);
-```
-
-Here's that same code written using jQuery:
-
-```javascript
-$('#element-id').remove();
-```
-
-jQuery also normalizes a lot of subtle differences in how older browsers implement a variety of JavaScript functionalities. This means that if you use jQuery, you can use the same methods to manipulate and access the DOM in almost all browsers.
-
-### The $ Character Points to a Function
-
-In JavaScript, the `$` character is a completely valid character to use in variable names. jQuery uses the `$` character as a shorthand. You can use it interchangeably with `jQuery` as a way to reference the jQuery library:
-
-```javascript
-// Both $ and jQuery calls function the same
-$('#element-id').remove();
-jQuery('#element-id').remove();
-```
-
-How do `jQuery()` and `$()` work? `$()`. What's happening here is that `$()` is a function call, meaning that `$` is a function. This function is designed to take in a string, such as `$('#element-id')`, which will select an element by its id, `#`. After this, we then call remove on that element. The `$` variable is the entry point into all jQuery-related functionality.
-
-### jQuery Objects vs DOM Elements
-
-You'll hear two terms thrown around a lot when using jQuery: **DOM elements** and jQuery objects.
-
-This nomenclature can be a little confusing, but it's important to understand the distinction. DOM elements are the actual elements that we ordinarily grab with native JavaScript and then manipulate using the browser's DOM API. They're the browser-world representation of the HTML that we put in. jQuery objects "wrap" DOM elements in new objects that define properties and method names that are easier for people to use, like append and remove, instead of more verbose JavaScript operations like element.innerHtml = element.innerHtml + '<div>my new dom stuff</div>'. In addition, jQuery objects can wrap more than one element at a time. For example, we can query for all of the `<div>` elements on a page by running `let divs = $('div');`. This returns an Array like object, containing all the `<div>` elements on a page.  You can then run many jQuery methods on these multiple `<div>` elements at the same time.
-
-How do jQuery objects "wrap" DOM elements? This is just terminology that means that jQuery objects store references to the DOM elements they "wrap". When we call methods on jQuery objects, jQuery then goes and runs the native JavaScript methods on the actual DOM elements that the jQuery object is wrapping. This abstraction gives us a lot of power and flexibility in our manipulation of the DOM.
-
-### Loading jQuery
+### TODO 1 Load jQuery
 
 There's several ways to load jQuery into your web project. While package managers are the way to go in production, the easiest is to use a CDN (Content Delivery Network).  Most popular libries are hosted on CDN's, and you only need to Google "library-of-interest CDN" to find a link. Try it with jQuery!
 
-We can link to jQuery using the Google CDN.  Open up the `index.html` file of the Wonkiepedia project, and add the following script tag to the head of the page.
+We can link to jQuery using the Google CDN.  Open up the `index.html` file of the Billypedia project, and add the following script tag to the head of the page.
 
 ```javascript
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 ```
 
-### Test jQuery Setup
+#### Test jQuery Setup
 If you correctly followed the above setup step for loading jQuery, you can easily test the setup. Go back to your 'index.html' page running in your browser, **refresh the page, open your DevTools console** and type "$", you should see an output similar to this:
 
 ```javascript
@@ -86,91 +49,28 @@ function (a,b){return new n.fn.init(a,b)}
 
 If instead you something similar to what's below, then you've yet to included jQuery correctly.
 
+**TODO 1**
 ```javascript
 > $
 ReferenceError: $ is not defined
 ```
+---
 
-### Selecting Elements with jQuery
-Ordinarily, if we want to manipulate an element in the DOM, we have to use these three methods on the document in JavaScript:
+### TODO 2 : Modify the page using jQuery
 
-```javascript
-document.getElementById
-document.getElementsByClassname
-document.getElementsByTagName
-document.querySelector
-document.querySelectorAll
-```
+With the DevTools console open, we're going to run some jQuery commands to modify our page. By doing so in the console, we can get jiggy with jQuery without permanently modify the page. The changes we make in these first set of exercises will be reset if you refresh the page, so hold of on refreshing until you finish will all of the steps in **TODO 2**
 
-However, these are verbose and pretty inflexible ways to access the DOM. With jQuery, we can use `$()` and pass in a CSS-style selector to grab one or multiple elements.
+Making DOM queries with jQuery, we can select elements using CSS selectors. This allows us to select elements by their:
 
-### CSS Selectors
-With jQuery, we can select elements the same way that we target elements with CSS selectors. For instance, take a look at the following CSS:
+* type: `$('div')`
+* class: `$('.heading-quotes')`
+* id $('#quotes')
 
-```css
-/* Targets all h1 elements and makes them blue */
-h1 {
-    color: blue;
-}
+There's also a buttload of options for further targeting elements, like, get the last child of a div, or select only the first `<a>` tag below a `<div>` with class of `blue`.
 
-/* Targets the element with the id "everything" and turns the background red */
-#everything {
-    background-color: red;
-}
+Let's start with some simple exercises right on our index page.  **In the DevTools console** of your browser running the `index.hml` page of the Billypedia project, run the following commands:
 
-/* Targets all elements with the class "holder" and adds a black border */
-.holder {
-    border: 1px solid black;
-}
-
-/* Targets all li elements within ul elements and bold them */
-ul li {
-    font-weight: bold;
-}
-
-/* Targets p elements coming immediately after an h1 element and makes it green */
-h1 + p {
-    color: green;
-}
-```
-
-### Examples of using jQuery to select and manipulate elements by their CSS Selectors
-
-We can use the exact same CSS selector syntax to select elements on the DOM with jQuery. Here's JavaScript code using jQuery to do the same thing as the CSS above:
-
-```javascript
-// Turn h1s blue
-$('h1').css('color', 'blue');
-// Make the element with id "everything" have a red background
-$('#everything').css('background-color', 'red');
-// Make all elements with class "holder" have a black border
-$('.holder').css('border', '1px solid black');
-// Make all li elements inside of ul elements have bold text
-$('ul li').css('font-weight', 'bold');
-// Makes all p elements immediately following an h1 green
-$('h1 + p').css('color', 'green');
-```
-
-### Method Chaining (Fluent Syntax)
-When jQuery returns the result of a query, the resulting set, an Array-like Object, contains methods we can call to manipulate the elements in the returned set. Conveniently, we can chain together methods to perform multiple actions on the elements. This is accomplished by using the dot operator, followed by the method we want to invoke. This is possible because many jQuery method calls continue to return the Array-like Object. This makes things very convenient!
-
-```javascript
-$('div').css('color', 'red').attr('name', 'red-divs').appendTo('body');
-```
-
-The above statement grabs all `<div>` elements in the DOM, changes their text color to red, gives them a `name` attribute of `red-divs`, then appends them to the `<body>` tag - all in fluent syntax.
-
-
-### DOM Sets
-Since we can use CSS selectors to select elements from the DOM, it follows that if we use the selector `'div'`, we are selecting all of the `<div>` elements on the DOM. 
-
-You can see this to be the case by going to your `index.html` page, running in your browser, and typing $('div').length() into the DevTools console. length() is a method that will show you the number of elements that you matched with your selector in your query. The set of elements returned from a query is called the matched set. The return value of a jQuery selector is this matched set. For instance, if we run `$('div')` in our DevTools on a page with the HTML above in it, we'll see an array-like representation of DOM elements.
-
-### Run some jQuery methods
-
-Making DOM queries with jQuery, we can select elements using their type, their class or their id. There's also a buttload of options for further targeting elements, like, get the last child of a div, or select only the first `<a>` tag below a `<div>` with class of `blue`.
-
-Let's start with some simple exercises right on our index page.  In the DevTools console of your browser running the `index.hml` page of the Wonkiepedia project, run the following commands:
+#### Select and modify elements
 
 1. Select all divs and change their text color to red:
     
@@ -209,7 +109,7 @@ Let's start with some simple exercises right on our index page.  In the DevTools
     $('#quotes:last-child').css('padding-bottom', '4px');
     ```
     
-### Moving, Replacing, and Removing Elements:
+#### Move, replace, and remove elements
 
 1. Move the section quotes to the top of the div with id sections:
     
@@ -229,22 +129,104 @@ Let's start with some simple exercises right on our index page.  In the DevTools
     $('#section-bio p:last-child').remove();
     ```
     
-## Exercises
+#### Create and add elements
 
-Creating DOM elements with jQuery, we provide a string representing the type of element we want to create. The string must include the element symbols:
+Creating DOM elements with jQuery, we provide a String representing the type of element we want to create. The string must include the element symbols:
 
 ```javascript
-let $div = $('<div>').addClass('blue-div');
+let $section = $('<section>').attr('id', 'section-rider');
+$section.append($('<h3>').text('Billy\'s Rider')).appendTo($('#sections'));
 ```
 
-Above, when we create this element, we've yet to add it to the DOM.  This is advantageous because the DOM we can build complex nested elements, and add them once constructed, and this means the webpage is only redrawn once.
+Above, when we created the `<section>` element, we've yet to add it to the DOM.  This is optimal because we can build complex, nested elements, and add them once constructed, and this means the webpage is only redrawn once, and not many times per element.
 
-Let's get to work creating some elements.
+---
 
-Open up the `index.js` file of the wonkiepedia project, and follow the 
-instructions to build out the UI from the loaded JSON data.
+### Build out the Billypedia page
 
-For exercise 3, you want to build a table using jQuery to list Billy's rider. Below is an example of a function that uses jQuery to build a HTML table, based on some people data. Your job is do to something similar with Billy's rider data.
+Let's get to work dynamically creating, structuring, styling and adding some elements Billypedia page!
+
+Open up the `index.js` file of the billypedia project, and follow the TODO's below to build out the UI from the loaded JSON data.
+
+#### TODO 3 Add Style with jQuery
+
+Style the `$('#section-bio')` and `$('#section-quotes)` as per some of the examples we tried above in the console. These style changes will be permanent, so make Billy proud by styling the page just right!
+
+#### TODO 4 Populate the Top Rated List
+
+Populate the `$('#list-top-rated')` unordered list with styled `<li>` containing the details of Billy's top rated recordings. The data is available to you at `data.discography.topRated`.
+
+We've included an example of looping over the list and logging the `recording` so you can see the data structure of a single recording.  The code looks this this:
+
+```javascript
+let topRated = data.discography.topRated;
+_.forEach(topRated, function(recording) {
+    // console.log(recording);
+});
+```
+
+The above code serves to exemplify plucking out the top rated data you need to loop over it. Notice we have the fantastic <a href="https://lodash.com/docs" target="_blank">lodash library</a> in our scope. You'll want to delete this code, and write your own implementation to create all the necessary `<li>`, then append them to the existing top rated unordered list, at `$('#list-top-rated')`.
+
+How can you use _.map() to your advantage here?
+
+#### TODO 5 Populate the Top Rated List
+ 
+For this **TODO**, you must assemble a new `<section>` and `<ul>` for Billy's general recordings data. Unlike **TODO 4**, there is yet a section or unordered list in the DOM for the recordings, so you must use jQuery to create those elements, too.
+
+a. Create a recordings `<section id="section-recordings">` and add it below the section for top rated recordings in the sidebar. How can you acheive this with jQuery?
+
+b. Create a <ul id="list-recordings">, style it, and add it to the `<section id="section-recordings">`.
+
+c. Add a styled `<li class="recording">` for every recording in the recordings Array. What lodash methods can help you here?
+
+d. Add CSS styling rules to the `css/site.css` file to style the list items. Can these style rules apply to list items in both the top rated and recordings lists? How can you acheive this with CSS selectors/rules and jQuery?
+
+**The resulting HTML should look something like this:**
+
+```html
+<section id="section-recordings">
+  <ul id="list-recordings">
+      <li class="recording">
+          <div class="title">Title: Eastern Rebellion</div>
+          <div class="artist">Artist: Cedar Walton</div>
+          <div class="release">Release: Timeless</div>
+          <div class="year">Year: 1976</div>
+      </li>
+      <!-- more list items here -->
+  </ul>
+</section>
+```
+
+#### TODO 6
+
+Use jQuery to add an image to the top of the sections for top rated and recordings. By default, show the image that corresponds to the first recording in each list.  
+
+**The resulting HTML should look something like this:**
+
+```html
+<div id="image-container-recording" class="image-container">
+    <img id="recording-image" src="images/album/eastern-rebellion.jpg" class="image">
+</div>
+```
+#### TODO 7
+
+Build out a feature for the image of Billy such that when the user clicks on his picture, we swap out the source of the image to the next available image in the list of Billy images at `data.images.billy`.
+
+How do you add a click handler to an HTML element? How to you change an attribute of an HTML element?
+
+In order to make the HTML layout stay in place when swapping out images, you may need to set `min-width` and `min-height` of image containing div. How can you do this with a CSS class and style rule?
+
+Can you make the image fade-in?
+
+#### TODO 8
+
+Build out a feature for the list items of both the top rated and recordings lists such that when the user clicks on one of the `<li>`, we swap out the source of the image for the feature based on the `art` url associated with the recording.
+
+To do this, you need a way of writing some data to each `<li>` such that when a user clicks on it, we can retrieve the data.  How can you do this?
+
+#### TODO 9 Build a table using jQuery
+
+Tables are designed for tabular data, and not layout!. For **TODO 8**, you want to build a table using jQuery to list Billy's rider. Below is an example of a function that uses jQuery to build a HTML table, based on some people data. Your job is do to something similar with Billy's rider data.
 
 ```javascript
 var createTable = function(people){
@@ -264,20 +246,6 @@ var createTable = function(people){
 let people = [{nameFirst: "John", nameLast: "Doe"}, {nameFirst: "Dick", nameLast: "Jones"}]
 createTable(people).appendTo("body");
 ```
-
-### Creating a Button with jQuery
-
-```javascript
-$('<button>', {
-        text: 'Next Picture',
-        id: 'btnNextPic',
-        click: function () {
-            console.log('next pic button clicked!')
-        }
-    }).appendTo('main');
-```
-
-The above code creates a button, adds text to the button `Next Picture`, gives the button and id of `btnNextPic`, assigns a click handler, and finally, appends it to the `<main>` DOM element.
 
 ## Halle 
                                   _,-,_

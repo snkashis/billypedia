@@ -119,6 +119,7 @@ $(document).ready(function() {
 });
 
 function replaceImage(event) {
+    console.log(event.currentTarget);
     const 
         $imageContainer = $(`#${event.data.id}`).empty(),
         pacifier = opspark.makePacifier($imageContainer[0]),
