@@ -2,7 +2,7 @@
 
 An intro to jQuery!
 
-Special thanks to Nathan Dooilli @ndonolli for the fatastic name for this project!
+Special thanks to Nathan Dooilli @ndonolli for the awesome rename on this project!
 
 ## Module: jQuery
 
