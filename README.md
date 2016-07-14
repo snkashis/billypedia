@@ -218,6 +218,18 @@ In order to make the HTML layout stay in place when swapping out images, you may
 
 Can you make the image fade-in?
 
+**BONUS**
+
+You also have available to you a preloader, called a pacifier.  See if you can place one on the image containing div while the picture is loading.  Here's an example of usage:
+
+```javascript
+// adds spinner to a native element, note [0] after the jQuery call! //
+const pacifier = opspark.makePacifier($('#image-container-billy')[0]);
+
+// stop the pacifier and remove it from the DOM //
+pacifier.stop(); 
+```
+
 #### TODO 8
 
 Build out a feature for the list items of both the top rated and recordings lists such that when the user clicks on one of the `<li>`, we swap out the source of the image for the feature based on the `art` url associated with the recording.

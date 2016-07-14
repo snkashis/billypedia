@@ -1,4 +1,4 @@
-/* global $ _ */
+/* global $ _ opspark */
 $(document).ready(function() {
     $.getJSON('data.json', function (data) {
         // YOUR CODE BELOW HERE //
