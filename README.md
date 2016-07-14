@@ -22,7 +22,7 @@ We're going to use it to modify our Billypedia page, as well to give our page dy
 
 ## TODO
 
-### TODO 1 Load jQuery
+### TODO 1 : Load jQuery
 
 There's several ways to load jQuery into your web project. While package managers are the way to go in production, the easiest is to use a CDN (Content Delivery Network).  Most popular libries are hosted on CDN's, and you only need to Google "library-of-interest CDN" to find a link. Try it with jQuery!
 
@@ -56,7 +56,7 @@ ReferenceError: $ is not defined
 ```
 ---
 
-### TODO 2 : Modify the page using jQuery
+### TODO 2 : Modify the Page using jQuery
 
 With the DevTools console open, we're going to run some jQuery commands to modify our page. By doing so in the console, we can get jiggy with jQuery without permanently modify the page. The changes we make in these first set of exercises will be reset if you refresh the page, so hold of on refreshing until you finish will all of the steps in **TODO 2**
 
@@ -142,17 +142,17 @@ Above, when we created the `<section>` element, we've yet to add it to the DOM. 
 
 ---
 
-### Build out the Billypedia page
+### Build out the Billypedia Page
 
 Let's get to work dynamically creating, structuring, styling and adding some elements Billypedia page!
 
 Open up the `index.js` file of the billypedia project, and follow the TODO's below to build out the UI from the loaded JSON data.
 
-#### TODO 3 Add Style with jQuery
+#### TODO 3 : Add Style with jQuery
 
 Style the `$('#section-bio')` and `$('#section-quotes)` as per some of the examples we tried above in the console. These style changes will be permanent, so make Billy proud by styling the page just right!
 
-#### TODO 4 Populate the Top Rated List
+#### TODO 4 : Populate the Top Rated List
 
 Populate the `$('#list-top-rated')` unordered list with styled `<li>` containing the details of Billy's top rated recordings. The data is available to you at `data.discography.topRated`.
 
@@ -169,7 +169,7 @@ The above code serves to exemplify plucking out the top rated data you need to l
 
 How can you use _.map() to your advantage here?
 
-#### TODO 5 Populate the Top Rated List
+#### TODO 5 : Populate the Top Rated List
  
 For this **TODO**, you must assemble a new `<section>` and `<ul>` for Billy's general recordings data. Unlike **TODO 4**, there is yet a section or unordered list in the DOM for the recordings, so you must use jQuery to create those elements, too.
 
@@ -197,7 +197,7 @@ d. Add CSS styling rules to the `css/site.css` file to style the list items. Can
 </section>
 ```
 
-#### TODO 6
+#### TODO 6 : Create Images for Recording Lists
 
 Use jQuery to add an image to the top of the sections for top rated and recordings. By default, show the image that corresponds to the first recording in each list.  
 
@@ -208,7 +208,7 @@ Use jQuery to add an image to the top of the sections for top rated and recordin
     <img id="recording-image" src="images/album/eastern-rebellion.jpg" class="image">
 </div>
 ```
-#### TODO 7
+#### TODO 7 : Dynamically Swap Billy Images
 
 Build out a feature for the image of Billy such that when the user clicks on his picture, we swap out the source of the image to the next available image in the list of Billy images at `data.images.billy`.
 
@@ -230,13 +230,13 @@ const pacifier = opspark.makePacifier($('#image-container-billy')[0]);
 pacifier.stop(); 
 ```
 
-#### TODO 8
+#### TODO 8 : Dynamically Swap Recording Images 
 
 Build out a feature for the list items of both the top rated and recordings lists such that when the user clicks on one of the `<li>`, we swap out the source of the image for the feature based on the `art` url associated with the recording.
 
 To do this, you need a way of writing some data to each `<li>` such that when a user clicks on it, we can retrieve the data.  How can you do this?
 
-#### TODO 9 Build a table using jQuery
+#### TODO 9 Build a Table using jQuery
 
 Tables are designed for tabular data, and not layout!. For **TODO 8**, you want to build a table using jQuery to list Billy's rider. Below is an example of a function that uses jQuery to build a HTML table, based on some people data. Your job is do to something similar with Billy's rider data.
 
