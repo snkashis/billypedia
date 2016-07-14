@@ -167,7 +167,7 @@ _.forEach(topRated, function(recording) {
 
 The above code serves to exemplify plucking out the top rated data you need to loop over it. Notice we have the fantastic <a href="https://lodash.com/docs" target="_blank">lodash library</a> in our scope. You'll want to delete this code, and write your own implementation to create all the necessary `<li>`, then append them to the existing top rated unordered list, at `$('#list-top-rated')`.
 
-How can you use _.map() to your advantage here?
+How can you use `_.map()` to your advantage here?
 
 #### TODO 5 : Populate the Top Rated List
  
