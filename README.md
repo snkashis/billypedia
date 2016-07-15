@@ -120,7 +120,7 @@ Let's start with some simple exercises right on our index page.  **In the DevToo
 2. Change an HTML attribute by swaping out the `src` of the image tag:
     
     ```javascript
-    $('#pic-billy').attr('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Billy_Higgins.jpg/220px-Billy_Higgins.jpg');
+    $('#image-billy').attr('src', 'images/billy/billy-1.jpg');
     ```
     
 3. Remove the stuff about Billy's divorce!
