@@ -2,6 +2,7 @@
 $(document).ready(function() {
     $.getJSON('data.json', function (data) {
         // YOUR CODE BELOW HERE //
+        // console.log(data);
         
         const
             billyPics = data.images.billy,
@@ -21,22 +22,6 @@ $(document).ready(function() {
                     });
             });
         
-        // console.log(data);
-        
-        /*
-         * 0. Style the #section-bio and #section-quotes as per some of the 
-         * examples we tried in the console.
-         */
-        
-        /*
-         * 1. Populate the #list-top-rated <ul>:
-         *
-         * Loop through the top rated recordings of Billy Higgins, and, 
-         * using lodash, add a styled <li> for each recording. Inspect a 
-         * recording object in the console to view its available properties.
-         *
-         * How can you use _.map() to your advantage here?
-         */
         const topRated = data.discography.topRated;
         
         const $imageContainerTopRated = $('<div>').attr('id', 'image-container-top-rated').addClass('image-container');
@@ -51,35 +36,6 @@ $(document).ready(function() {
         $('#list-top-rated').append(topRatedListItems);
         $('.top-rated').on('click', {id: 'image-container-top-rated'}, replaceImage);
         
-        
-        /*
-         * 2. Create a discography <section>:
-         *      a. Create a discography <section id="section-disc"> and add it 
-         *         below the and add it below the #section-quotes on the 
-         *         index.html page.
-         * 
-         *      b. Create a <ul id="list-disc">, style it, and add it to the 
-         *         <section id="section-disc">.
-         * 
-         *      c. Add a styled <li class="recording"> for every recording in 
-         *         the recordings Array. What lodash methods can help you here?
-         *
-         *      d. Add CSS styling rules to the site.css file to style the list
-         *
-         *      The resulting HTML should look something like this:
-         *
-         *         <section id="section-disc">
-         *           <ul id="list-disc">
-         *               <li class="recording">
-         *                   <div class="title">Title: Eastern Rebellion</div>
-         *                   <div class="artist">Artist: Cedar Walton</div>
-         *                   <div class="release">Release: Timeless</div>
-         *                   <div class="year">Year: 1976</div>
-         *               </li>
-         *           </ul>
-         *       </section>
-         */
-         
         const recordings = data.discography.recordings;
         const recordingsListItems = _.map(recordings, function(recording) {
             return $('<li>').addClass('recording')
@@ -102,16 +58,6 @@ $(document).ready(function() {
             .appendTo('#sidebar');
          
          $('.recording').on('click', {id: 'image-container-recording'}, replaceImage);
-         
-         /*
-          * 3. Below the <section id="section-disc">, create a new section for 
-          * Billy's rider. Use jQuery to assemble a table to display the rider 
-          * data. The rider data is at data.rider
-          */
-          
-        //  console.log(data.rider);
-        
-        
         
         // YOUR CODE ABOVE HERE //
     })
@@ -119,7 +65,6 @@ $(document).ready(function() {
 });
 
 function replaceImage(event) {
-    console.log(event.currentTarget);
     const 
         $imageContainer = $(`#${event.data.id}`).empty(),
         pacifier = opspark.makePacifier($imageContainer[0]),
