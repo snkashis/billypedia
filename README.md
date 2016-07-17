@@ -160,13 +160,13 @@ Open up the `index.js` file of the billypedia project, and follow the TODO's bel
 
 ---
 
-#### TODO 3 : Add Style with jQuery
+### TODO 3 : Add Style with jQuery
 
 Style the `$('#section-bio')` and `$('#section-quotes)` as per some of the examples we tried above in the console. These style changes will be permanent, so make Billy proud by styling the page just right!
 
 ---
 
-#### TODO 4 : Populate the Top Rated List
+### TODO 4 : Populate the Top Rated List
 
 Populate the `$('#list-top-rated')` unordered list with styled `<li>` containing the details of Billy's top rated recordings. The data is available to you at `data.discography.topRated`.
 
@@ -185,7 +185,7 @@ How can you use `_.map()` to your advantage here?
 
 ---
 
-#### TODO 5 : Populate the Top Rated List
+### TODO 5 : Populate the Top Rated List
  
 For this **TODO**, you must assemble a new `<section>` and `<ul>` for Billy's general recordings data. Unlike **TODO 4**, there is yet a section or unordered list in the DOM for the recordings, so you must use jQuery to create those elements, too.
 
@@ -215,7 +215,7 @@ d. Add CSS styling rules to the `css/site.css` file to style the list items. Can
 
 ---
 
-#### TODO 6 : Create Images for Recording Lists
+### TODO 6 : Create Images for Recording Lists
 
 Use jQuery to add an image to the top of the sections for top rated and recordings. By default, show the image that corresponds to the first recording in each list.  
 
@@ -229,7 +229,7 @@ Use jQuery to add an image to the top of the sections for top rated and recordin
 
 ---
 
-#### TODO 7 : Dynamically Swap Billy Images
+### TODO 7 : Dynamically Swap Billy Images
 
 Build out a feature for the image of Billy such that when the user clicks on his picture, we swap out the source of the image to the next available image in the list of Billy images at `data.images.billy`.
 
@@ -253,7 +253,7 @@ pacifier.stop();
 
 ---
 
-#### TODO 8 : Dynamically Swap Recording Images 
+### TODO 8 : Dynamically Swap Recording Images 
 
 Build out a feature for the list items of both the top rated and recordings lists such that when the user clicks on one of the `<li>`, we swap out the source of the image for the feature based on the `art` url associated with the recording.
 
@@ -261,7 +261,7 @@ To do this, you need a way of writing some data to each `<li>` such that when a 
 
 ---
 
-#### TODO 9 Build a Table using jQuery
+### TODO 9 Build a Table using jQuery
 
 Tables are designed for tabular data, and not layout!. For **TODO 8**, you want to build a table using jQuery to list Billy's rider. A rider is all the things a musicians needs to perform, sometimes including smarties with the blue ones removed!
 
