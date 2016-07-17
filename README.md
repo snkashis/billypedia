@@ -4,9 +4,13 @@ An intro to jQuery!
 
 Special thanks to Nathan Dooilli @ndonolli for the awesome rename on this project!
 
+---
+
 ## Module: jQuery
 
 This project corresponds with the jQuery module of the Operation Spark Bootcamp. See the jQuery module under the Bootcamp in https://greenlight.operationspark.org, and ensure you've read all sub modules therein.
+
+---
 
 ### Setup
 
@@ -14,13 +18,15 @@ Run `os install` and select and install the `billypedia` project. Once installed
 
 Make sure your website is serving from Cloud9, open it, and navigate to your portfolio, select `Billypedia` - this will open the `index.html` page in your browser. You'll see a Wikipedia-like Billypedia page for the great jazz drummer, Billy Higgins.
 
+---
+
 ### jQuery
 
 jQuery is a third-party library that allows developers to more easily manipulate the elements of a webpage represented in the <a href="https://en.wikipedia.org/wiki/Document_Object_Model" target="_blank">DOM (Document Object Model).</a>
 
 We're going to use it to modify our Billypedia page, as well to give our page dynamic features.
 
-## TODO
+---
 
 ### TODO 1 : Load jQuery
 
@@ -70,6 +76,8 @@ There's also a buttload of options for further targeting elements, like, get the
 
 Let's start with some simple exercises right on our index page.  **In the DevTools console** of your browser running the `index.hml` page of the Billypedia project, run the following commands:
 
+---
+
 #### Select and modify elements
 
 1. Select all divs and change their text color to red:
@@ -108,6 +116,7 @@ Let's start with some simple exercises right on our index page.  **In the DevToo
     $('#quotes').css('padding-right', '10px').css('padding-left', '10px');
     $('#quotes:last-child').css('padding-bottom', '4px');
     ```
+---
     
 #### Move, replace, and remove elements
 
@@ -128,6 +137,7 @@ Let's start with some simple exercises right on our index page.  **In the DevToo
     ```javascript
     $('#section-bio p:last-child').remove();
     ```
+---
     
 #### Create and add elements
 
@@ -148,9 +158,13 @@ Let's get to work dynamically creating, structuring, styling and adding some ele
 
 Open up the `index.js` file of the billypedia project, and follow the TODO's below to build out the UI from the loaded JSON data.
 
+---
+
 #### TODO 3 : Add Style with jQuery
 
 Style the `$('#section-bio')` and `$('#section-quotes)` as per some of the examples we tried above in the console. These style changes will be permanent, so make Billy proud by styling the page just right!
+
+---
 
 #### TODO 4 : Populate the Top Rated List
 
@@ -168,6 +182,8 @@ _.forEach(topRated, function(recording) {
 The above code serves to exemplify plucking out the top rated data you need to loop over it. Notice we have the fantastic <a href="https://lodash.com/docs" target="_blank">lodash library</a> in our scope. You'll want to delete this code, and write your own implementation to create all the necessary `<li>`, then append them to the existing top rated unordered list, at `$('#list-top-rated')`.
 
 How can you use `_.map()` to your advantage here?
+
+---
 
 #### TODO 5 : Populate the Top Rated List
  
@@ -197,6 +213,8 @@ d. Add CSS styling rules to the `css/site.css` file to style the list items. Can
 </section>
 ```
 
+---
+
 #### TODO 6 : Create Images for Recording Lists
 
 Use jQuery to add an image to the top of the sections for top rated and recordings. By default, show the image that corresponds to the first recording in each list.  
@@ -208,6 +226,9 @@ Use jQuery to add an image to the top of the sections for top rated and recordin
     <img id="recording-image" src="images/album/eastern-rebellion.jpg" class="image">
 </div>
 ```
+
+---
+
 #### TODO 7 : Dynamically Swap Billy Images
 
 Build out a feature for the image of Billy such that when the user clicks on his picture, we swap out the source of the image to the next available image in the list of Billy images at `data.images.billy`.
@@ -230,11 +251,15 @@ const pacifier = opspark.makePacifier($('#image-container-billy')[0]);
 pacifier.stop(); 
 ```
 
+---
+
 #### TODO 8 : Dynamically Swap Recording Images 
 
 Build out a feature for the list items of both the top rated and recordings lists such that when the user clicks on one of the `<li>`, we swap out the source of the image for the feature based on the `art` url associated with the recording.
 
 To do this, you need a way of writing some data to each `<li>` such that when a user clicks on it, we can retrieve the data.  How can you do this?
+
+---
 
 #### TODO 9 Build a Table using jQuery
 
@@ -261,45 +286,4 @@ let people = [{nameFirst: "John", nameLast: "Doe"}, {nameFirst: "Dick", nameLast
 createTable(people).appendTo("body");
 ```
 
-## Halle 
-                                  _,-,_
-                               ,-'  |. '-,
-                              /    .|     \
-                             /      |.     \
-                            /      .|       \
-                           /   .    |.       \
-                          /   | |  .|    |    \
-                         /    | |   |.   |     \
-                   \|/  /     | |  .|    |      \  \|/
-                  - *<((       '    |.           ))>* -
-                   /|\  \         __|__         /  /|\
-                         '\      '--|--'      /'
-                //  \\     '.       |.      .'     //  \\
-                \\\///     (=================)     \\\///
-                 ||||     ,'    /.    ----   ',     ||||
-                 \ __\.___|   .|     | /_ |   |___./__ /
-                  \, / | ||    |.    |  / |   || | \ ,/
-                    '-----|   .|      ----    |-----'
-                           \   |.            /
-                           /\ .|            /\
-                          /\ '\ \         /' /\
-                         /\ \ /'\._____./'\ / /\
-                        (\ \ /             \ / /)
-                        | \ (               ) / |
-                        |-- |               | --|
-                     ___|-- |               | --|___
-                    '========'             '========'
-
-         .-----------------------------------------------------.
-         |  O     P     E     R     A     T     I     O     N  |
-         |-----------------------------------------------------|
-         |    _____   _____           _____    _  __   .  __   |
-         |   / ____| |  __ \   /\    |  __ \  | |/ /  /|  \ \  |
-         |  ( (___   | |__) ) /  \   | |__) ) | ' /  //__  \ \ |
-         |   \___ \  |  ___/ / /\ \  |  _  /  |   \  --//  / / |
-         |   ____) ) | |    / ____ \ | | \ \  | |\ \  |/  / /  |
-         |  |_____/  |_|   /_/    \_\|_|  \_\ |_| \_\ '  /_/   |
-         |                                                     |
-         '-----------------------------------------------------'
-         
-
+---
