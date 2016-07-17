@@ -285,5 +285,3 @@ var createTable = function(people){
 let people = [{nameFirst: "John", nameLast: "Doe"}, {nameFirst: "Dick", nameLast: "Jones"}]
 createTable(people).appendTo("body");
 ```
-
----
