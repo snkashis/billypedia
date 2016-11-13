@@ -70,7 +70,7 @@ Making DOM queries with jQuery, we can select elements using CSS selectors. This
 
 * type: `$('div')`
 * class: `$('.heading-quotes')`
-* id $('#quotes')
+* id: `$('#quotes')`
 
 There's also a buttload of options for further targeting elements, like, get the last child of a div, or select only the first `<a>` tag below a `<div>` with class of `blue`.
 
